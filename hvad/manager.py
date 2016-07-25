@@ -750,8 +750,9 @@ class TranslationQueryset(QuerySet):
 
     def select_related(self, *fields):
         if not fields:
-            raise NotImplementedError('To use select_related on a translated model, '
-                                      'you must provide a list of fields.')
+            # raise NotImplementedError('To use select_related on a translated model, '
+            #                           'you must provide a list of fields.')
+            pass
         if fields == (None,):
             self._raw_select_related = []
         elif django.VERSION >= (1, 7):  # in newer versions, calls are cumulative
